@@ -1,0 +1,114 @@
+\newpage
+
+\section{Weight Modules (Ben)}
+
+Recall that $D$ stands for the Weyl algebra of polynomial differential operators on $\mathbb{C}[x_1,\dots,x_n]$. If $K$ is a subtorus of $(\mathbb{C^*})^n$ (not containing any coordinate subtorus), then we define the hypertoric enveloping algebra (HEA) as $U=D^K$. The HEA contains an abelian subalgebra $D_0=\mathbb{C}[h_1^+,\dots,h_n^+$.
+
+In this section we will describe simple weight modules of $U$. Throughout the section, by a $U$-module we mean a left $U$-module.
+
+Let $M$ be a finite dimensional $U$-module. Let us decompose this module into eigenspaces of $h_i^+$'s.
+
+\begin{definition}
+Let $\chi$ be a surjective homomorphism $D_0\to \mathbb{C}$. Denote by $m_\chi$ the maximal ideal $\ker(\chi:D_0\to \mathbb{C})$. Define
+$$
+M_\chi = \{v\in M | m_\chi^N=0 \textrm{ for some } N\ge1\}.
+$$
+Alternatively, if we denote $\chi_i=\chi(h_i^+)$, then
+$$
+M_\chi = \{v\in M | (h_i^+-\chi_i)^N=0 \textrm{ for some } N\ge1\}.
+$$
+\end{definition}
+\begin{definition}
+A $U$-module $M$ is called a weight module if $\displaystyle M\cong \bigoplus_{\chi}M_\chi$.
+\end{definition}
+
+
+\begin{theorem}
+If $M$ is a finite dimensional $U$-module, then it is a weight module.
+\end{theorem}
+
+\begin{proof}
+For any $i$, consider the Jordan decomposition $h_i^+=h_i^{ss}+h_i^{n}$, where $h_i^{ss}$ acts on $M$ semi-simply and $h_i^n$ nilpotently. Recall that both $h_i^{ss}$ and $h_i^n$ are polynomials in $h_i^+$. In particular the operators $h_i^+, 1\le i\le n$ are simultaneously diagonalizable.
+\end{proof}
+
+\begin{remark}
+The action of $h_i^n$ is a $U$-module homomorphism $M\to M$, and moreover it commutes with any homomorphism of $U$-modules $M\to N$.
+\end{remark}
+
+\begin{corollary}
+If $L$ is a simple finite dimensional $U$-module, then each $h_i$ acts semi-simply.
+\end{corollary}
+
+\begin{proof}
+The image of $h_i^n$ is a submodule, and it cannot be the whole $L$. So, $h_i^n$ acts trivially.
+\end{proof}
+
+For any (surjective homomorphism) $\chi:D_0\to \mathbb{C}$, define the module $U$-module $P^{(1)}_\chi=U/Um_\chi$.
+\marginnote{do we need modules $P_\chi^{(N)}$?}
+It is an easy observation that for any $U$-module $M$, one has $M_\chi=\Hom(P_\chi^{(1)}, M)$. In particular, if $L$ is a simple $U$-module  and $L_\chi\neq \emptyset$ for some $\chi$, then $L$ is a quotient of $P_\chi^{(1)}$.
+
+Let $w \in P_\chi^{(1)}$ be image of $1$. Note that $w\in (P_\chi^{(1)})_\chi $.
+
+\begin{theorem}
+$P_\chi^{(1)}$ has a basis given by $\{m^\lambda \cdot w\}_{\lambda\in \mathfrak{t}^*_{\mathbb{Z}}}$.
+\end{theorem}
+\begin{proof}
+
+\end{proof}
+
+\begin{corollary}
+If $m_\chi,m_\nu\in \Spec_m(D_0)$, then $\left(P_\chi^{(1)}\right)_\nu=\left\{\begin{matrix}1&,\chi-\nu \in \mathfrak{t}^*_\mathbb{Z},\\0&,\textrm{otherwise}. \end{matrix}\right.$ 
+\end{corollary}
+
+\begin{lemma}\label{lm:proper_submodule_criterion}
+A $U$-submodule $N\subset P_\chi^{(1)}$ is proper iff $N_\chi=0$.
+\end{lemma}
+
+\begin{proof}
+If $N_\chi\neq\emptyset$, then $N_\chi=\left(P_\chi^{(1)}\right)_\chi\ni w$, so $N=P_\chi^{(1)}$.
+\end{proof}
+
+\begin{theorem}
+Each $P_\chi^{(1)}$ has a unique simple quotient.
+\end{theorem}
+\begin{proof}
+Existence is guaranteed by Zorn's Lemma. Uniqueness follows from the fact that sum of two proper submodules of $P_\chi^{(1)}$ is again a proper submodule. The latter fact follows direcly from Lemma \ref{lm:proper_submodule_criterion}.
+\end{proof}
+
+Denote the unique simple quotient of $P_\chi^{(1)}$ by $S_\chi$.
+
+\begin{remark}
+The module $S_\chi$ is not necessarily finite dimensional, but it is a weight module, since $P_\chi^{(1)}$ is.
+\end{remark}
+
+\begin{proposition}
+For any $m_\chi,m_\nu\in\Spec_m(D_0)$, the following are equivalent:
+\begin{enumerate}
+    \item $P_\chi^{(1)}\cong P_\nu^{(1)}$,
+    \item $S_\chi\cong S_\nu$,
+    \item $\left(S_\chi\right)_\nu \neq \emptyset$,
+    \item $\dim \left(S_\chi\right)_\nu =1 $,
+    \item $m^{\chi-\nu}m^{\nu-\chi}w\neq 0\in P_\chi^{(1)}$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+
+\end{proof}
+
+Let us define an equivalence relation on the space of characters $D_0\to \mathbb{C}$, by declaring $\chi \sim \nu$, if any of the five conditions above holds.
+
+\begin{theorem}\label{thm:equivalence_of_simples}
+Let $m_\chi,m_\nu\in\Spec_m(D_0)$. Then $\chi \sim \nu$ iff $\chi-\nu\in\mathfrak{t}^*_\mathbb{Z}$ and there is no $i$ such that $h_i^-(\chi)$ and $h_i^+(\nu)$ both are integers and have opposite signs.
+\end{theorem}
+
+\begin{example}
+Let $n=2$, $K=\{1\}$, $\mathfrak{t}^*_\mathbb{Z}\cong \mathbb{Z}^2$. Get $4$ equivalence classes on $\mathfrak{t}^*_\mathbb{Z}$. \marginnote{need a picture here}
+\end{example}
+
+Fix $\xi \in \mathfrak{k}^*_\mathbb{Z}$, and look at the (lattice in) affine space $\xi+\mathfrak{t}^*_\mathbb{Z}$. Each function $h_i^\pm$ is integral either at all points of $\xi+\mathfrak{t}^*_\mathbb{Z}$, or at none of them. 
+
+If each $h_i^\pm$ is integral at none of the points $\xi+\mathfrak{t}^*_\mathbb{Z}$, then the condition in Theorem \ref{thm:equivalence_of_simples} vacuously holds true, and so all the points in $\xi+\mathfrak{t}^*_\mathbb{Z}$ are equivalent. In particular, for a generic $\xi$, there is unique simple module with a non-zero weight space in $\xi+\mathfrak{t}^*_\mathbb{Z}$. This is given by $P_\chi^{(1)}$ for any $\chi \in \xi+\mathfrak{t}^*_\mathbb{Z}$.
+
+If some $h_i^\pm$ are integral at all the points of $\xi+\mathfrak{t}^*_\mathbb{Z}$, then this affine lattice will be divided by the level sets $h_i^\pm=0$ into several chambers. The set of chambers containing at least one point will be in a bijection with the set of simple $U$-modules. Moreover, the chambers with finitely many points will correspond exactly to the finite dimensional $U$-modules.
+

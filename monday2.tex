@@ -1,0 +1,224 @@
+
+
+
+\newpage
+
+\section{Hypertoric Enveloping Algebra. Part I (Nick)}
+
+\subsection{Weyl algebra}
+
+Once and for all, fix a positive integer $n\ge1$. Consider the Weyl algebra
+\begin{equation}
+\begin{array}{cc}
+    D = \mathbb{C}\langle x_1,\partial_1, x_2, \partial_2, \dots, x_n, \partial_n \rangle = \\ \{\textrm{polynomial differential operators on  } \mathbb{C}[x_1,x_2, \dots, x_n]\}
+\end{array}
+\end{equation}
+
+As usual, the algebra $D$ has a filtration given by the order of the differential operators. However, we prefer to consider a different filtration, adjusted to the fact that we are considering differential operators on the affine space $\mathbb{C}^n$. Specifically, for $k\ge0$ let
+\begin{equation}
+F_k D = \Big\{ p_{k}(x_1,\partial_1, \dots, x_n, \partial_n)\Big| ~ p_{k} \textrm{ is a polynomial of degree at most } k \Big\}.
+\end{equation}
+\begin{example} 
+$x_1\partial_1\in F_2 D$, $1\in F_0D$, $x_1^3\partial_2^2\in F_5D$.
+\end{example}
+Note that the associated graded of the filtration is the polynomial ring:
+\begin{equation}
+\displaystyle \gr D = \bigoplus_{k\ge0} F_k D/{F_{k-1}D} \cong \mathbb{C} [x_1,y_1,\dots, x_n, y_n],
+\end{equation}
+where $x_i$ denotes (the image of) multiplication by $x_i$, and $y_i$ denotes (the image of) $\partial_i$.
+
+Consider the action $(\mathbb{C}^*)^n \acts D$ given by $t\cdot x_i = t_ix_i$, $t\cdot \partial_i = t_i^{-1}\partial_i$ for $t=(t_1,\dots,t_n)\in (\mathbb{C}^*)^n$.
+
+For any $z\in \mathbb{Z}^n$, define the weight space $D_z=\{a\in D | t\cdot a = t^z a, \forall t \in (\mathbb{C}^*)^n\}$, where we use notation $(t_1,\dots,t_n)^{(z_1,\dots, z_n)} = t_1^{z_1}\dots t_n^{z_n}$. As usual, one has the decomposition $D=\bigoplus_{z\in\mathbb{Z}^n}D_z$.
+
+\begin{example}
+$D_0$ contains the elements $x_i\partial_i$ and $\partial_ix_i$, for any $i$. There elements are going to be of extreme importance for us. So let us fix notations for them. Let $h_i^+=x_i\partial_i$, $h_i^-=\partial_ix_i$. 
+\end{example}
+Note that $h_i^-=h_i^++1$. So, these two elements carry more or less the same information. At this point, it looks like it would be more convenient to switch $+$ with $-$ in the notation. However, this particular choice of notation will become convenient later on.
+
+Note that any polynomial expression of $h_i^+$'s (as well as $h_i^-$'s) will represent an element of $D_0$. So, it is immediate that
+$$
+D_0 \supset \mathbb{C}[h_1^+,\dots,h_n^+] = \mathbb{C}[h_1^-,\dots, h_n^-].
+$$
+What is less obvious is that in fact the inclusion above is an equality. We are going to prove it next.
+
+To prove that, we need to understand how to write down an expression of the sort $x_1\partial_1^3x_1x_2^4\partial_2^4 \in D_0$ as a polynomial applied to $(h_1^+,\dots, h_n^+)$.
+
+\begin{lemma}\label{lm:action_of_h_on_D_0}
+If $a\in D_0$, then $[h_i^\pm,a]=z_ia$. 
+\end{lemma}
+Note that it does not matter, which of $h_i^+$, $h_i^-$ we use in the formula, because they differ by a constant.
+\begin{proof}
+
+\end{proof}
+
+\begin{lemma}\label{lm:express_as_prod_of_hs}
+For any $k\ge0$ one has,
+$$
+\partial_i^kx_i^k=(h_i^+ + 1)(h_i^+ + 2)\dots (h_i^+ + k),
+$$
+$$
+x_i^k\partial_i^k=(h_i^- - 1)(h_i^- - 2)\dots (h_i^- - k).
+$$
+\end{lemma}
+\begin{proof}
+
+\end{proof}
+
+Lemma \ref{lm:express_as_prod_of_hs} gives an efficient way of expressing any element in $D_0$ as a polynomial in $h_i^\pm$'s.
+For instance,
+
+\begin{equation*}
+\begin{array}{cc}
+     x_1\partial_1^3x_1x_2^4\partial_2^4 = (x_1^2\partial_1^2)(\partial_1x_1)(x_2^4\partial_2^4)= \\
+          =
+    (h_1^--1)(h_1^--2)(h_1^++1)(h_2^--1)(h_2^--2)(h_2^--3)(h_2^--4).
+\end{array}
+\end{equation*}
+
+\begin{corollary}
+$D_0 = \mathbb{C}[h_1^+,\dots,h_n^+] = \mathbb{C}[h_1^-,\dots, h_n^-].$
+\end{corollary}
+
+Now that we have described $D_0$, let us discuss how to describe $D_z$ for $z\not=0$.
+
+For any $z\in \mathbb{Z}^n$, denote by $z_+$ and $z_-$ the vectors with coordinates $(z_+)_i=\max(z_i,0)$, $(z_-)_i=\max(-z_i,0)$. Note that $z=z_+-z_-$. Denote $m^z=x^{z_+}\partial^{z_-}\in D_z$.
+
+\begin{example}
+If $z=(5,-2,0,1,1)$, then 
+\[
+m^z=x^{(5,0,0,1,1)}\partial^{(0,2,0,0,0)}=
+x_1^5x_4x_5\partial_2^2\,.
+\]
+\end{example}
+
+For any $f(h)=f(h_1^+, \dots, h_n^+)\in D_0$ and any $z\in \mathbb{Z}^n$, let $$f_z(h) = f(h_1^++z_1,\dots,h_n^++z_n).$$
+
+\begin{lemma}\label{lm:commuting_poly_and_m}
+$f(h)m^z = m^z f_z(h)$
+\end{lemma}
+\begin{proof}
+
+\end{proof}
+
+\begin{corollary} \label{cor:description_of_D_z}
+For any $z\in \mathbb{Z}^n$, $D_z=\mathbb{C}[h_1^\pm,\dots,h_n^\pm]\cdot m^z$.
+\end{corollary}
+\begin{proof}
+Follows from Lemmas \ref{lm:express_as_prod_of_hs}, \ref{lm:commuting_poly_and_m}.
+\end{proof}
+
+\begin{example}
+Let $n=1$. Let us represent the element $x_1^8\partial_1^5\in D_3$ in the form described in Corollary \ref{cor:description_of_D_z}:
+
+\begin{equation*}
+    \begin{array}{ll}
+         x_1^8\partial_1^5 = x_1^3(x_1^5\partial_1^5) &= 
+         x_1^3(h_1^--1)(h_1^--2)\dots(h_1^--5) =\\
+         &=(h_1^--4)(h_1^--5)\dots(h_1^--8)x_1^3.
+    \end{array}
+\end{equation*}
+\end{example}
+
+Corollary \ref{cor:description_of_D_z} provides the following description of $D$ (as a vector space):
+$$
+D=\bigoplus_{z\in\mathbb{Z}^n}D_z = \bigoplus_{z\in\mathbb{Z}^n}\mathbb{C}[h_1^\pm,\dots,h_n^\pm]\cdot m^z
+$$
+To understand the algebra structure of $D$ in terms of this decomposition, we need a formula for computing the product $f(h)m^z \cdot g(h)m^w$, for polynomials $f,g$ and $z,w\in\mathbb{Z}^n$. Lemma \ref{lm:express_as_prod_of_hs} guarantees that
+$$
+f(h)m^z \cdot g(h)m^w = f(h)g_z(h)m^z\cdot m^w,
+$$
+so reduces the problem to computing the product $m^z\cdot m^w$. Note that the latter apriori belongs to $D_{z+w}$, however there is no reason to expect it to be $m^{z+w}$. In fact, the following is true.
+
+\begin{proposition} Let 
+
+\begin{equation*}
+    \begin{array}{ccc}
+         [h_i]^k=&\left\{
+         \begin{array}{lll}
+              1, & \textrm{if } k=0,\\
+              x_i^k\partial_i^k, & \textrm{if } k>0,\\
+              \partial^{-k}x_i^{-k}, & \textrm{if } k<0,
+         \end{array}
+         \right.
+         &
+         =\left\{
+         \begin{array}{lll}
+              1, & \textrm{if } k=0,\\
+              (h_i^+ + 1)\dots (h_i^+ + k), & \textrm{if } k>0,\\
+              (h_i^- + 1)\dots (h_i^- + |k|), & \textrm{if } k<0.
+         \end{array}
+         \right.
+    \end{array}
+\end{equation*}
+
+Then 
+
+$$
+    m^z\cdot m^w = \left(\prod_{\substack{z_iw_i<0 \\ |z_i|\leq |w_i|}}[h_i]^{z_i}\right)m^{z+w}\left(\prod_{\substack{z_iw_i<0 \\ |z_i|> |w_i|}}[h_i]^{w_i}\right).
+$$
+\end{proposition}
+\begin{proof}
+By example (in exercises).
+\end{proof}
+
+Note that each $z_i$ has the same sign as $w_i$, then the naive expectation will hold: $m^z\cdot m^w=m^{z+w}$.
+
+\subsection{Hypertoric Enveloping Algebra}
+
+To construct hypertoric enveloping algebra, we need to fix a subtorus $K\subset (\mathbb{C^*}^n)$. Throughout the notes we will assume the following genericity section:
+\begin{align}\tag{S}\label{subtorus_condition}
+    K \textrm{ does not contain any coordinate subtorus.}
+\end{align}
+
+Let $T=(\mathbb{C^*})^n/K$. Consider the following short exact sequences:
+
+\begin{tikzcd}
+    1\arrow{r} & K \arrow{r}& (\mathbb{C^*})^n \arrow{r}& T\arrow{r} & 1 \\ 
+    0\arrow{r} & \mathfrak{k} \arrow{r}& \mathbb{C}^n \arrow{r}& \mathfrak{t}\arrow{r} & 0 \\
+    0 & \arrow{l}\mathfrak{k} & \arrow{l}(\mathbb{C}^n)^* & \arrow{l}\mathfrak{t}^*& \arrow{l} 0 \\
+    0 & \arrow{l}\mathfrak{k}_{\mathbb{Z}}\ar[equal]{d}& \arrow{l}\mathbb{Z}^n \ar[equal]{d}& \arrow{l}\mathfrak{t}^*_{\mathbb{Z}}\ar[equal]{d}& \arrow{l} 0 \\
+     & \Hom(K,\mathbb{C}^*) & \Hom((\mathbb{C}^*)^n,\mathbb{C}^*) & \Hom(T,\mathbb{C}^*) &  \\
+\end{tikzcd}
+
+\begin{definition}
+The hypertoric enveloping algebra (HEA, for short) is
+$$
+U=D^K = \bigoplus_{z\in \mathfrak{t}^*_{\mathbb{Z}}\subset\mathbb{Z}^n} \mathbb{C}[h_1^\pm,\dots,h_n^\pm]\cdot m^z.
+$$
+\end{definition}
+
+\begin{example}\label{ex:diagonal_in_C3}
+Let $n=3$, $K=\mathbb{C}^*_\Delta$ be the diagonal copy of $\mathbb{C}^*$ sitting inside $(\mathbb{C}^*)^3$. Then $T=(\mathbb{C}^*)^3/\mathbb{C}^*_\Delta\cong (\mathbb{C}^*)^2$. We have short exact sequences:
+
+\begin{tikzcd}[row sep=tiny]
+    1\arrow{r} & \mathbb{C}^* \arrow{r}& (\mathbb{C^*})^3 \arrow{r}& (\mathbb{C^*})^2\arrow{r} & 1 \\ 
+    & t \ar[maps to]{r}&(t,t,t)&&\\
+    &&(t_1,t_2,t_3)\ar[maps to]{r}& (t_1/t_3,t_2/t_3)&
+\end{tikzcd}
+
+\begin{tikzcd}[row sep=large]
+    1\arrow{r} & \mathbb{C} \arrow{r}{\begin{bmatrix} 1  \\ 1 \\ 1 \end{bmatrix}} & [3em]\mathbb{C}^3 \arrow{r}{\begin{bmatrix} 1~&0&-1  \\ 0~&1&-1 \\ \end{bmatrix}}&[3em] \mathbb{C}^2\arrow{r} & 1 \\ 
+        1 & \arrow{l}\mathbb{C} & \arrow{l}[swap]{\begin{bmatrix} 1&1&1 \end{bmatrix}}\mathbb{C}^3 & \arrow{l}[swap]{\begin{bmatrix} 1&~~0\\0&~~1 \\ -1&-1 \\ \end{bmatrix}} \mathbb{C}^2 &\arrow{l} 1 \\     1 & \arrow{l}\mathbb{Z} &                     \arrow{l}\mathbb{Z}^3 &  \arrow{l}\mathbb{Z}^2 &\arrow{l} 1 
+\end{tikzcd}
+
+\marginnote{picture here?}
+\end{example}
+
+The last question we will address in this section is: What is the center of $U$?
+
+Recall that Lemma \ref{lm:action_of_h_on_D_0}, if $a\in D_0$, then $[h_i^+,a]=z_ia$. In particular, we get that $Z(U)\subset D_0$.
+
+Also, recall that by Lemma \ref{lm:commuting_poly_and_m} $f(h)m^z=m^zf_z(h)$. So, typically $Z(U)$ is strictly smaller than $D_0$.  Moreover $f(h)$ is central iff $f(h)=f_z(h)$, for all $z\in\mathfrak{t}^*_{\mathbb{Z}}\subset \mathbb{Z}^n$.
+
+\begin{proposition}\label{prop:center_of_HEA}
+$Z(U)=\Sym(\mathfrak{k})\subset \Sym(\mathbb{C}^n)=\mathbb{C}[h_1^+,\dots,h_n^+].$
+\end{proposition}
+\begin{proof}
+
+\end{proof}
+
+\begin{example}
+In the setting of Example \ref{ex:diagonal_in_C3}, $Z(U)=\mathbb{C}[h_1^++h_2^++h_3^+]$.
+\end{example}
+

@@ -1,0 +1,75 @@
+\newpage
+\section{Quiver presentation of modules over HEA} % Ben
+
+In the previous section, we defined category $\mathcal{O}$ of modules over $U_\eta$. Let us discuss what do these modules look like. 
+
+\begin{example}
+Let $\alpha\in\{+,-\}^n$ be a feasible sign vector. Then the the module $S_\alpha$ belongs to category $\mathcal{O}$ iff $\alpha$ is $\xi$-bounded.
+\end{example}
+
+To make further analysis, let us consider $D$-modules first. Moreover, it will be instructive to look at the case $n=1$ first, i.e. $D=\langle x, \partial\rangle$. What does a weight module over $D$ with integer weights look like?
+
+Let $M$ be a $D$-module, such that $M=\bigoplus_{k\in \mathbb{Z}} M_k$, where the weights are meant with respect to $h^+$-action. The elements $x$ and $\partial$ will act in the following fashion:
+
+\begin{equation}
+\xymatrix{
+\dots~~ \ar@/^1.0pc/@[black][r]^{x}
+  & M_{-2}   \ar@/^1.0pc/@[black][l]^{\partial} \ar@/^1.0pc/@[black][r]^{x}
+  & M_{-1}  \ar@/^1.0pc/@[black][l]^{\partial} \ar@/^1.0pc/@[black][r]^{x}
+  & M_0 \ar@/^1.0pc/@[black][l]^{\partial}
+  \ar@/^1.0pc/@[black][r]^{x}
+  & M_1 \ar@/^1.0pc/@[black][l]^{\partial}
+  \ar@/^1.0pc/@[black][r]^{x} 
+  & ~~\dots \ar@/^1.0pc/@[black][l]^{\partial}
+  }
+\end{equation}
+
+An important question is when the compositions $$\xymatrix{M_n\ar[r]^{x}& M_{n+1}\ar[r]^{\partial}& M_{n}}$$ and $$\xymatrix{M_n\ar[r]^{\partial}& M_{n-1}\ar[r]^{x}& M_{n}}$$ are isomorphisms. By definition of $h^\pm$, those compositions are equal to actions of $h^-$ and $h^+$, respectively. That means that $x\partial:{M_n\to M_{n}}$ is a nilpotent map when $n=-1$ and isomorphism otherwise. Likewise the map $\partial x:{M_n\to M_{n}}$ is nilpotent when $n=0$ and isomorphism otherwise. Summarizing, the weight spaces $M_k$, $k\le-1$ are all isomorphic to $M_{-1}$, as well as the weight spaces $M_k$, $k\ge0$ are all isomorphic $M_0$. A nontrivial piece of information carried by module $M$ is how the maps $x:M_{-1}\to M_0$ and $\partial:M_0\to M_{-1}$ assempbly to a nilpotent representation of the quiver
+$$
+\Gamma = \xymatrix{\cdot \ar@/^1.0pc/@[black][r]
+  & \cdot  \ar@/^1.0pc/@[black][l]}
+$$
+Intuitively, it is clear that have a nilpotent representation of $\Gamma$, one can reconstruct the $U$-module $M$. This idea can be made rigorous.
+
+Denote by $D-mod_\mathbb{Z}$ the category of weight $D$-modules with integral weights. Denote by $NilRep(\Gamma)$ the category of nilpotent representations of the graph $\Gamma$.
+\begin{theorem}
+The functor $D-mod_\mathbb{Z}\to NilRep(\Gamma)$ given by $$  \xymatrix{M\ar@{|->}[r]&M_{-1} \ar@/^1.0pc/@[black][r]^{x} 
+  & M_0  \ar@/^1.0pc/@[black][l]^{\partial}}$$ is an equivalence of categories.
+\end{theorem}
+
+\begin{proof}
+Given a nilpotent representation $$\xymatrix{V_- \ar@/^1.0pc/@[black][r]^{a} & V_+  \ar@/^1.0pc/@[black][l]^{b}}$$ one can recover the $D$-module $M$ by letting $\displaystyle M=\bigoplus_{k\le -1}V_- \oplus \bigoplus_{k\ge 0} V_+ $ and defining the actions of $x$ and $\partial$ in the following way:
+$$
+\xymatrix{\dots~~ \ar@/^1.0pc/@[black][r]^{ba-3}&
+V_- \ar@/^1.0pc/@[black][r]^{ba-2}
+\ar@/^1.0pc/@[black][l]^{1}
+  & V_-   \ar@/^1.0pc/@[black][l]^{1} \ar@/^1.0pc/@[black][r]^{ba-1}
+  & V_-  \ar@/^1.0pc/@[black][l]^{1} \ar@/^1.0pc/@[black][r]^{a}
+  & V_+ \ar@/^1.0pc/@[black][l]^{b}
+  \ar@/^1.0pc/@[black][r]^{ab+1}
+  & V_+ \ar@/^1.0pc/@[black][l]^{1}
+  \ar@/^1.0pc/@[black][r]^{ab+2} 
+  & V_+ \ar@/^1.0pc/@[black][l]^{1}
+  \ar@/^1.0pc/@[black][r]^{ab+3} 
+  & ~\dots \ar@/^1.0pc/@[black][l]^{1}
+  }
+$$
+One checks Weyl algebra relations are satisfied. For instance, $ 1 (ab+1) - a b = 1$ and $b a - (ba-1)1 = 1$.
+\end{proof}
+
+Let us discuss now the case of $D$-modules for $n>1$. That is consider a weight module $M$ over $D=\langle x_1, \partial_1, \dots, x_n,\partial_n\rangle$ with integer weights. Let $M=\bigoplus_{z\in\mathbb{Z}^n}M_z$ be its weight decomposition. By the same argument as for the case $n=1$, the action of $x_i$ establishes isomorphism between $M_{(z_1,\dots,z_i,\dots,z_n)}$ and $M_{(z_1,\dots,z_i+1,\dots,z_n)}$, unless $z_i=-1$. Therefore, every weight space is isomorphic to one of the $2^n$ weight space $M_z$, $z\in \{-1,0\}^n$. We can put these $2^n$ weight spaces at vertices of an $n$-dimensional cube, where each edge is replaced with two maps 
+\xymatrix{ \ar@<0.5ex>[r]^{x_i} &   \ar@<0.5ex>[l]^{\partial_i}} . For instance, for $n=2$ and $n=3$ we get graphs
+$$
+\xymatrix{ M_{-1,0}\ar@<0.5ex>[r]^{x_1} \ar@<0.5ex>[d]^{\partial_2}&  M_{0,0}\ar@<0.5ex>[d]^{\partial_2} \ar@<0.5ex>[l]^{\partial_1}\\
+ M_{-1,-1}\ar@<0.5ex>[r]^{x_1} \ar@<0.5ex>[u]^{x_2}& M_{0,-1}  \ar@<0.5ex>[l]^{\partial_1}\ar@<0.5ex>[u]^{x_2}}
+ $$ % ~~~~~~ 
+ and $$
+ \xymatrix{& 
+ M_{-1,0,0}\ar@<0.5ex>[dl]^{\partial_3}\ar@<0.5ex>[rr]^{x_1}\ar@<0.5ex>[dd]^(.7){\partial_2}|!{[dl];[dr]}\hole& & M_{0,0,0} \ar@<0.5ex>[ll]^{\partial_1}\ar@<0.5ex>[dd]^{\partial_2} \ar@<0.5ex>[dl]^{\partial_3}\\
+ M_{-1,0,-1} \ar@<0.5ex>[ur]^{x_3}\ar@<0.5ex>[rr]^(0.7){x_1}\ar@<0.5ex>[dd]^{\partial_2}& & 
+ M_{0,0,-1} \ar@<0.5ex>[ll]^(.65){\partial_1}\ar@<0.5ex>[ur]^{x_3}\ar@<0.5ex>[dd]^(0.7){\partial_2}\\& 
+ M_{-1,-1,0} \ar@<0.5ex>[uu]^(.7){x_2}|!{[ur];[ul]}\hole\ar@<0.5ex>[rr]^(0.7){x_1}|!{[dr];[ur]}\hole \ar@<0.5ex>[dl]^{\partial_3}& & 
+ M_{0,-1,0} \ar@<0.5ex>[ll]^(0.65){\partial_1}|!{[dl];[ul]}\hole \ar@<0.5ex>[dl]^{\partial_3} \ar@<0.5ex>[uu]^{x_2}\\
+ M_{-1,-1,-1} \ar@<0.5ex>[ur]^{x_3}\ar@<0.5ex>[uu]^{x_2} \ar@<0.5ex>[rr]^{x_1}& & 
+ M_{0,-1,-1} \ar@<0.5ex>[ur]^{x_3} \ar@<0.5ex>[uu]^(0.7){x_2} \ar@<0.5ex>[ll]^{\partial_1}}
+$$

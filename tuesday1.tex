@@ -1,0 +1,83 @@
+\newpage 
+
+\section{Tuesday: Justin}
+
+\subsection{Central quotients of the hypertoric enveloping algebra}
+
+Recall the exact sequence of groups (in Justin's versus Nick's notation) 
+\[
+    \xymatrix{1 \ar[r] & G \ar[r]^-{i} & (\C^\times)^n \ar[r]^-{f} & F \ar[r] & 1 } 
+\]
+can be differentiated 
+\[
+    \xymatrix{0 \ar[r] & \g \ar[r]^-{T_ei} & \C^n \ar[r]^-{T_e f} & \ff \ar[r] & 0 } 
+\]
+and dualized 
+\[
+    \xymatrix{0 & \g^\vee \ar[l] & (\C^n)^\vee \ar[l] & \ff^\vee \ar[l] & 0 \ar[l] }\,.
+\]
+We have shown that the lattice points $\ff^\vee_\Z$ index the decomposition of $D^G$ as follows
+\[
+    U = D^G = \bigoplus_{z \in \ff_\Z^\vee} D_0 \cdot m^z \qquad D_0 = \C[h_1^\pm \ldots h_n^\pm] \qquad h_i^- = h_i^+ + 1\,.
+\]
+
+\textbf{Note.} The associated graded $\gr D_0 \cong \Sym (\C^n) = \C[(\C^n)^\vee]$ is \textit{canonically} isomorphic to the symmetric algebra of the Cartan. You can get $D_0\cong \C[(\C^n)^\vee]$ if you privilege $h_i^+$ (over $h_i^-$). 
+
+\textbf{Proposition.} (Nick's talk.) 
+\[
+\xymatrix{
+    \C[\g^\vee] \ar[r] \ar@{=}[d] & \C[(\C^n)^\vee] \ar@{=}[d] \\
+    \Sym(\g) \ar[r]^-{i_\ast} & \Sym(\C^n) \\
+    Z(U) \ar@{-->}[u]^{\cong} \ar[r] & D_0\ar[u]^{\cong} 
+}    
+\]
+Nick claimed the existence of the dashed arrow. Justin will prove it. 
+
+First, would-be consequences. 
+
+\textbf{Consequences.} TFAE 
+\begin{enumerate}
+    \item $m_\lambda \subset Z(U)$ are maximal ideals
+    \item points $\lambda\in \g^\vee$ 
+    \item cosets $\Lambda_\C\subset (\C^n)^\vee$ for $\ff^\vee$-action  
+\end{enumerate}
+
+\textbf{Definition.} \[ U_\lambda = U/U\cdot m_\lambda \] is a central quotient of $U$. Note $U\cdot m_\lambda$ is a 2-sided ideal, not to be confused with Ben's $\m_\lambda$ which kills less stuff. 
+
+\textbf{Recall:} any indecomposable [?] module $M$ must have its support (a coherent sheaf valued in Set) $\Supp(M)\subset (\C^n)^\vee$ contained in a single coset for $\ff_\Z^\ast$. Note, the support is equal to the set of nonzero weights for $M$.
+
+\textbf{Note:} Even if $\Supp(M) \subset \Lambda_\C$ it does not have to be true that $M$ is a $U_\Lambda$-module. 
+
+\textbf{Proposition.} TFAE
+\begin{enumerate}
+    \item $M$ is a $U_\lambda$-module 
+    \item $M = (M)^{m_\lambda} = \{m \in M \st m_\lambda \cdot m = 0\}$. 
+    \item the scheme-y support of $M$ is also contained in a single coset $s\Supp(M)\subset\Lambda_\C$ 
+\end{enumerate}
+
+\textbf{Example} 
+Consider the following exact sequence of groups
+\[
+    \xymatrix{\C^\times \ar[r]^-{\Delta} & (\C^\times)^2 \ar@{->>}[r] & \C^\times = F \\ & (t_1,t_2) \ar@{|->}[r] & (t_2/t_1) }    
+\]
+it differentiates to 
+\[
+    \xymatrix{
+    \g = \C \ar[r]^{\begin{bmatrix}1 \\ 1\end{bmatrix}} & \C^2 \ar[r]^{\begin{bmatrix}-1 & 1\end{bmatrix}} & \C = \ff
+    }    
+\]
+whence $Z(U) = \C[h_1^+ + h_2^+]\subset \C[h_1^+,h_2^+]\cong D_0$. 
+This situation has for $\lambda = 0$ for instance $M$ a $U_\lambda$-module $\iff$ $(h_1^+ + h_2^+)m = 0$ for all $m \in M$. 
+
+\textbf{Warning!} The modules we talk about are always (?) generalized. 
+
+\textbf{Definition.} (Should have come before.) Call a $U-$ (or $U_\lambda$-) module \underline{weight} if 
+\[ M = \bigoplus M_z \] and all $M_z$ are finite dimensional generalized weight spaces for $D_0$. 
+
+There is a $[D,U_\lambda]$-bimodule
+\[B_\lambda = D/D\cdot m_\lambda\] that allows us to go back and forth between $D$-mod and $U_\lambda$-mod via 
+\[\xymatrix{
+    D\textrm{-mod}\ar[r]^{\hom(B_\lambda, - )\cong (-)^{m_\lambda}} & U_\lambda\textrm{-mod} \ar[l]^{fill}
+}\]
+
+

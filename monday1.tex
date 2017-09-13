@@ -1,0 +1,62 @@
+\newpage 
+\section{Monday: Ben}
+
+\begin{definition} 
+an \underline{almost commutative ring} $R$ is a ring with a filtration 
+\[
+    A_0 \subset A_1 \subset \cdots     
+\]
+such that 
+\[
+    A_i A_j \subset A_{i+ j} \textrm{ and for }   [A_i , A_j] \subset A_{i+j - s}    
+\]
+for some positive integer $s$.
+\end{definition}
+
+We can take the commutative graded of such a ring
+\[
+    \gr(A) = \bigoplus A_j / A_{j-1}    
+\]
+to obtain a \textit{semiclassical} conical Poisson ring.  
+
+\begin{definition} 
+a \underline{conical Poisson ring} has
+\begin{itemize}
+    \item a $\Z_{\ge 0}$-grading, and 
+    \item a second \textit{homogeneous} operation $\{-,-\}: R\times R \rightarrow R$ of degree $-s$ for which 
+    \begin{itemize}
+        \item Lie bracket, and 
+        \item Liebniz
+    \end{itemize} relations hold.
+\end{itemize} 
+\end{definition}
+
+\textbf{Think} the functor $C \mapsto \{ - , C\}$ from functions to vector fields. In particular the Jacobi identity implies it is a Lie algebra homomorphism. 
+
+\begin{remark} 
+There is a classical limit functor from filtered to graded [conical Poisson] rings 
+\[
+    A \mapsto (\gr A, \{-,-\})
+\] 
+such that $\{\overline{a},\overline{b}\} = \overline{[a,b]}$. 
+\end{remark}
+
+\begin{example} 
+% \begin{math}\C \Z \del \end{math}
+Let $A = \mathbb{C}\langle x,d/dx\rangle$ be the ring of polynomial differential operators. Then the filtered pieces are 
+\begin{itemize}
+    \item $A_1 = \Span(1,x,d/dx)$
+    \item $A_n = A_1^n$
+\end{itemize} 
+and 
+\begin{itemize}
+    \item $\gr A = \C [x,p]$
+    \item $\{ f,g \} = \frac{\del f}{\del p} \frac{\del g}{\del x} - \frac{\del g}{\del p}\frac{\del f}{\del x}$
+    \item $\{ p,x\} = 1$.
+\end{itemize}
+Note, the symbol $p$ denotes the image of the operator $\del/\del x$ in $A_1/A_0$. 
+\end{example}
+
+\begin{example} 
+The canonical map $\U\g\rightarrow \C[\g^\ast]$ equips $\C[\g^\ast]$ with KKS Poisson structure got from the bracket $[X,Y] = XY - YX$ on $\U\g$. Note $(\U\g)_1 = \C\oplus \g$. 
+\end{example}

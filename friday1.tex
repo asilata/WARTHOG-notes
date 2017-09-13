@@ -1,0 +1,136 @@
+\section{Friday: Alex}
+
+\subsection{The non-abelian Higgs and Coulomb branches}
+
+Plan 
+\begin{itemize}
+    \item Recap $\M_C,\M_H$
+    \item See some parallels in structure/properties 
+    \item Some examples
+\end{itemize}
+
+We start with a pair $(G,V)$ for $G$ a connected reductive group (over $\C$) and $V$ some finite dimensional $G$-rep. To this pair are associated a pair of varieties, $\M_H$ the Higgs branch, and $\M_C$ the Coulomb branch. 
+
+Recall: Want to study $\OO_H, \OO_C$ and their duality properties. 
+
+Notation: Denote by $T\subset G$ the maximal torus, by $W = N_G(T)/T$ the Weyl group, and by $\tt\subset \g$ the corresponding Lie algebras.
+
+\subsection{The Higgs Branch}
+
+Def: For $\eta : G\rightarrow \C^\times$ define 
+\[
+    \M_{H,\eta} = T^\ast V ////_\eta G    
+\]
+a Hamiltonian reduction.
+
+What does this mean/unmasking. 
+
+Hamiltonian $G$ action on $T^\ast V = V^\ast \oplus V$ with moment map $\mu : T^\ast V \rightarrow \g^\ast$ defined by $\mu(\phi,v) = (X\mapsto \phi(Xv))$ let's us define 
+\[
+    R = \bigoplus_{k\ge 0} R_k = \bigoplus_{k\ge 0} \C[\inv{\mu}(0)]^{G,k\eta} = \left(\C[\inv{\mu}(0)]\otimes \C[t] \right)^G
+\]
+where the superscript $G,k\eta$ means we are taking semi-invariants, and the action of $G$ on the grading is $g\cdot t = \inv{\eta(g)}t$. 
+
+Note: Nick did this in the reverse in his talk yesterday. Imposed Lawrence relations after\ldots 
+
+Then like in Nick's talk yesterday 
+\[\M_{H,\eta} = \Proj R \rightarrow \M_{H,0} = \Spec R_{\eta,0} = \Spec \C[\inv{\mu}(0)]^G \]
+Note $R$ depends on $\eta$ so maybe write $R_\eta = R$. 
+
+Notes 
+\begin{enumerate}
+    \item If $\M_{H,\eta}$ is smooth, then $\M_{H,\eta} \rightarrow \M_{H,0}$ is a symplectic resolution. 
+    \item From Justin's talk yesterday we know how to quantize such a variety. 
+\end{enumerate}
+
+Examples 
+\begin{itemize}
+    \item Hypertoric varieties 
+    \item (Nakajima) quiver varieties
+\end{itemize}
+
+Remark: that's the Higg's branch. Easy to define compared with Coulomb. 
+
+Remark: $G$ simple then $G$ has no characters. 
+
+\subsection{The Coulomb side}
+
+Consider $G((t)) = G(\C((t))), G[[t]],\ldots$. $G((t))$ acts on $V((t)) = V\otimes_{\C} \C((t))$. 
+
+Define $\Xi_V = G((t)) \times^{G[[t]]} V[[t]] = (G((t))\times V[[t]])/G[[t]]$ have $\Xi_V\xrightarrow{\pi} V((t))$ defined by $[g,v]\mapsto gv$. Let ${}_V\Xi_V = \inv{\pi}(V[[t]])$. 
+Another way to write this guy is 
+\[
+\cong \{
+(P,\phi,s) \st \phi: P|_{D^\times}\xrightarrow{\cong} P_{triv}|_{D^\times}, s\in \Gamma(D,P\times^G V), \phi(s) \in \Gamma(D,P_{triv}\times V)    
+\}    
+\] 
+where $P$ is a pgb on $D$. 
+
+Def. $A = H_\bullet^{G[[t]]} ({}_V\Xi_V)$ and $A_{\hbar} = H_\bullet^{G[[t]]\rtimes\C^\times}({}_V\Xi_V)$. 
+
+Note. $G[[t]]$ acts on ${}_V\Xi_V$ by $g_1\cdot [g_2,v] = [g_1g_2,v]$ and $\C^\times$ acts on $G((t))$ by $s\cdot g(t) = g(st)$. 
+
+Morally, $$H_\bullet^{G[[t]]} ({}_V\Xi_V) = H_\bullet^{G((t))} (\Xi_V\times_{V((t))} \Xi_V) $$ 
+(cf.\ $B\backslash G/B \cong G\backslash(G/B\times G/B)$.)
+
+Theorem (BFN) $A, A_{\hbar}$ can be given associative ``convolution'' algebra structures. 
+\begin{enumerate}
+    \item $A$ is commutative 
+    \item $A_{\hbar}$ is a deformation of $A$ over $\C[\hbar] = H^\bullet_{\C^\times} (\pt) $, i.e.\ $A_{\hbar}/\hbar A_{\hbar} \cong A$. In particular, this implies that $A$ has a Poisson structure. 
+\end{enumerate}
+
+Def. $\M_C = \Spec A$. 
+
+Theorem (BFN) $A$ is f.g.\, a domain, and normal (i.e.\ all its local rings are integrally closed). This last property turns out to be very important when we try to compare $\M_c$ with some other space. It's also generically symplectic, but BFN don't say whether it's a symplectic singularity. So the Coulomb branch is always normal, but the Higgs branch is not neccessarily. There are examples of Coulomb branches which are not conical. [List.]
+
+\subsubsection{Some properties} 
+
+Completely general. 
+
+\begin{enumerate}
+    \item $H^\bullet_{G[[t]]}(\pt)\cong H^\bullet_G(\pt) \rightarrow A, A_{\hbar}$
+    and the image is (Poisson) commutative. Note, this is analgous to the map $D_0\rightarrow U$ that we have seen in Ben's talk. Taking spec yields a map $\M_C\rightarrow \Spec H_G^\bullet(\pt) \cong \tt/W$ and the fact that the guy on the right is commutative means this is an integrable system. Moreover, $A$ is free over $H_G^\bullet (\pt)$. 
+    \item Have a map \[\xymatrix{\M_C \ar@{-->}[rr]\ar[dr]& & T^\ast T^\vee /W\cong (\tt\times T^\vee)/W \ar[dl] \\ & \tt/W & }\] it implies $\dim \M_C = 2\rk G$ and $\M_C$ is generically symplectic. The dashed map is a birational symplectomorphism. Algebraically, this reflects the localization theorem. 
+    \[\xymatrix{
+        A(G,V) \ar[r] & A(T,V)[{\textrm{roots}}^{-1}]^W \ar[r] & A(T,\OO)[{\textrm{roots}}^{-1}]^W
+    }\] with each map an embedding of algebras. Note, we take $T^\vee$ because we want functions on smth, so need to take coweights. 
+\end{enumerate}
+
+Examples
+\begin{enumerate}
+    \item Hypertoric varieties! (case $G = T\rightarrow (\C^\times)^n \subset GL(V)$ if $V\cong \C^n$)
+    \item In general, if $G$ acts on $V = \OO$ then $\M_C\cong \Z_\g^\vee$ the scheme of regular centralizers $ = T^\ast G^\vee ////_{\rho,\rho}(U^\vee\times U^\vee)$ ``Kostant-Whittaker reduction.'' This guy is sometimes called ``pure $G$-gauge theory.'' Note $U^\vee$ is the unipotent radical of a Borel. 
+    \item ``Adjoint matter'' got by $G$ acting on $V = \g$. $$\M_C\cong T^\ast T^\vee/W$$ Here $A_\hbar$ is a spherical graded Cherednik algebra if $G$ is in type $A$, maybe. 
+    \item Quiver gauge theory supplies a family of examples. Start with a quiver $\Gamma$. For simplicity assume it is an oriented finite ADE dynkin diagram. Eg, $A_4$. Choose vector spaces $V_i,W_i$ for every vertex $i\in \Gamma$. Let
+    $
+    \mathbf{V} = \bigoplus_{i\rightarrow j} \hom(V_i,V_j)\oplus \bigoplus_{i}\hom(W_i,V_i)$ and $\mathbf{G} = \prod GL (V_i)$ and $\eta: \mathbf{G}\rightarrow \C^\ast$ defined by $(g_i)\mapsto \prod \det\inv{g_i}$. Then $\M_{H,\eta}$ is the Nakajima quiver variety. The dimension vectors $(\dim W_i)$ and $(\dim V_i)$ can be used to define coweights $\lambda,\mu$ for the (adjoint) ADE group. 
+
+    Theorem (BFN et al.) \begin{enumerate}
+        \item $\M_C\cong \W_\mu^\lambda$ a generalized slice in $\G$ for the ADE group 
+        \item $A_{\hbar} = $ truncated shifted Yangian 
+    \end{enumerate}
+
+    Examples: \begin{enumerate}
+        \item $\Gamma = \sl_2$ Dynkin $\rightsquigarrow W = \C^n\rightarrow V = \C^k$ and $\mathbf{G} = GL(k)$ acting on $\hom(\C^n,\C^k)$ and then \begin{enumerate}
+            \item $\M_{H,\eta}\cong T^\ast Gr(k,n)$. 
+            \item $\M_C= \W^k_{n-2k}$ for $$\M_C = \left\{  
+                \begin{pmatrix} a(t) & b(t) \\ c(t) & d(t) \end{pmatrix} \in M_2 \C[t] \st \begin{aligned} a \textrm{ monic, degree }k\,, \\ b,c \textrm{ deg }<k\,, \\ \det = t^n \end{aligned}   
+            \right\} $$ 
+            Both varieties have connections to $\Rep \sl_2$ via the weight space $V(n)_{n-2k}\subset K_\theta (\OO)\subset V(1)^{\otimes n}$. $\OO\cong$ modules over $\otimes$-product algebra for $\sl_2$.  
+        \end{enumerate}  
+        \item When taking $V_i = \C^i$ up to $i = n-1$ and $W_{n-1} = \C^n$ but other $W = 0$ get $\M_{H,\eta} \cong T^\ast \fl_n$ and $\M_C\cong \mathcal{N}_{\sl_n}$ which $\M_{H,\eta}$ resolves. 
+    \end{enumerate}
+\end{enumerate} 
+
+\section{Friday: Ben}
+
+We take $\tt\, (\cong \tt^\ast $ Mon--Thur$)$ and draw in it all the hyperplanes $h_i^{mid} = n\,,\forall n\in\Z$. 
+
+[Picture.] 
+
+On this lattice I have morphisms between points. In one direction I have paths, in the other direction I have translations by $\tt_\Z$. Call the quiver $\M^\lambda$.
+%  = \xymatrix{\dot \ar/_/[r] & \dot \ar@{/_/}[l]}$
+
+The punchline, theorem: $\End(\OO_{+\epsilon})$ is Morita equivalent to $A_\hbar$ for $\M_C$. 
+
+
