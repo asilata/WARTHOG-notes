@@ -192,17 +192,20 @@ $$
 Let $n=3$, $K=\mathbb{C}^*_\Delta$ be the diagonal copy of $\mathbb{C}^*$ sitting inside $(\mathbb{C}^*)^3$. Then $T=(\mathbb{C}^*)^3/\mathbb{C}^*_\Delta\cong (\mathbb{C}^*)^2$. We have short exact sequences:
 
 \begin{tikzcd}[row sep=tiny]
-    1\arrow{r} & \mathbb{C}^* \arrow{r}& (\mathbb{C^*})^3 \arrow{r}& (\mathbb{C^*})^2\arrow{r} & 1 \\ 
-    & t \ar[maps to]{r}&(t,t,t)&&\\
-    &&(t_1,t_2,t_3)\ar[maps to]{r}& (t_1/t_3,t_2/t_3)&
+  1\arrow{r} & \mathbb{C}^* \arrow{r}& (\mathbb{C^*})^3 \arrow{r}& (\mathbb{C^*})^2\arrow{r} & 1 \\ 
+  & t \ar[maps to]{r}&(t,t,t)&&\\
+  &&(t_1,t_2,t_3)\ar[maps to]{r}& (t_1/t_3,t_2/t_3)&
 \end{tikzcd}
+\todo{There is a commutative diagram in the source here, which does not compile.}
 
-\begin{tikzcd}[row sep=large]
-    1\arrow{r} & \mathbb{C} \arrow{r}{\begin{bmatrix} 1  \\ 1 \\ 1 \end{bmatrix}} & [3em]\mathbb{C}^3 \arrow{r}{\begin{bmatrix} 1~&0&-1  \\ 0~&1&-1 \\ \end{bmatrix}}&[3em] \mathbb{C}^2\arrow{r} & 1 \\ 
-        1 & \arrow{l}\mathbb{C} & \arrow{l}[swap]{\begin{bmatrix} 1&1&1 \end{bmatrix}}\mathbb{C}^3 & \arrow{l}[swap]{\begin{bmatrix} 1&~~0\\0&~~1 \\ -1&-1 \\ \end{bmatrix}} \mathbb{C}^2 &\arrow{l} 1 \\     1 & \arrow{l}\mathbb{Z} &                     \arrow{l}\mathbb{Z}^3 &  \arrow{l}\mathbb{Z}^2 &\arrow{l} 1 
-\end{tikzcd}
 
-\marginnote{picture here?}
+% \begin{tikzcd}[row sep=large]
+%     1\arrow{r} & \mathbb{C} \arrow{r}{\begin{bmatrix} 1  \\ 1 \\ 1 \end{bmatrix}} & [3em]\mathbb{C}^3 \arrow{r}{\begin{bmatrix} 1&0&-1  \\ 0&1&-1 \\ \end{bmatrix}}&[3em] \mathbb{C}^2\arrow{r} & 1 \\ 
+%     1 & \arrow{l}\mathbb{C} & \arrow{l}[swap]{\begin{bmatrix} 1&1&1 \end{bmatrix}}\mathbb{C}^3 & \arrow{l}[swap]{\begin{bmatrix} 1&0\\0&1 \\ -1&-1 \\ \end{bmatrix}} \mathbb{C}^2 &\arrow{l} 1 \\
+%     1 & \arrow{l}\mathbb{Z} & \arrow{l}\mathbb{Z}^3 &  \arrow{l}\mathbb{Z}^2 &\arrow{l} 1 
+%   \end{tikzcd}
+
+\todo{picture here?}
 \end{example}
 
 The last question we will address in this section is: What is the center of $U$?
@@ -222,3 +225,6 @@ $Z(U)=\Sym(\mathfrak{k})\subset \Sym(\mathbb{C}^n)=\mathbb{C}[h_1^+,\dots,h_n^+]
 In the setting of Example \ref{ex:diagonal_in_C3}, $Z(U)=\mathbb{C}[h_1^++h_2^++h_3^+]$.
 \end{example}
 
+%%% Local Variables:
+%%% TeX-master: "main"
+%%% End:

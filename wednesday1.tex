@@ -1,0 +1,46 @@
+\newpage
+
+\section{The Farkas lemma (Nick)}
+
+\begin{definition}
+  A polarized hyperplane arrangement is a triple $\calV = (V,\eta,\xi)$, where
+  \begin{enumerate}
+  \item $V$ is a subspace in $\bbR^I$,
+  \item $\eta \in \bbR^I/V \cong (V^\perp)^*$, and
+  \item $\xi\in V^* \cong (\bbR^I)^*/V^\perp$.
+  \end{enumerate}
+\end{definition}
+For simplicity, we assume that $V$ is cut out by equations defined over $\bbZ$, and that $\eta$ and $\xi$ are also integral.
+\todo{What exactly does ``integral'' mean?}
+
+We have the following exact sequences.
+Applying $\operatorname{Lie}(-)$ to the fourth sequence gives us the third sequence.
+\begin{align*}
+  0 &\from \bbR^I/V \from \bbR^I \from V \from 0\\
+  0 &\to V^\perp \to (\bbR^I)^* \to V^*\to 0\\
+  0 &\to V^\perp_\bbC \to (\bbC^I)^* \to V^*_{\bbC}\to 0\\
+  1 &\to K \to (\bbC^\times)^I \to T \to 1.
+\end{align*}
+
+The subtorus $K\subset (\bbC^*)^I$ acts on $D = \bbC\langle x_i,\del_i \mid i\in I \rangle$.
+Let $U = D^K$ be the invariants.
+Then $Z(U) \cong \Sym \frakk = \Sym V^\perp_\bbC$.
+We can think of $\eta$ as a map $\Sym V^\perp_\bbC\to \bbC$, or equivalently as a map $Z(U)\to \bbC$.
+Set $U_\eta = U\otimes_{Z(U)}\bbC$.
+Recall that we have
+\[
+  U = \bigoplus_{\lambda\in \frakt^*_\bbZ}D_0\cdot\frakm^\lambda,\quad U^{\geq 0} = \bigoplus_{\langle \lambda, \xi \rangle \geq 0}D_0\cdot \frakm^{\lambda}.
+\]
+
+
+
+
+ 	
+
+%%% Local Variables:
+%%% TeX-master: "main"
+%%% End:
+
+
+
+

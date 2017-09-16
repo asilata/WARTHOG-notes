@@ -10,8 +10,10 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{amsfonts}
-\usepackage{tikz-cd}
 \usepackage{marginnote}
+\usepackage{tikz-cd}
+\usepackage{todonotes}
+\presetkeys{todonotes}{size=\scriptsize}{}
 \usepackage[all]{xy}
 
 
@@ -38,12 +40,16 @@
 \newcommand{\Rep}{{\rm Rep ~}}
 \newcommand{\Supp}{{\rm Supp ~}}
 
-% mathbb 
+% mathbb
+\newcommand{\bbC}{\mathbb{C}}
 \newcommand{\C}{\mathbb{C}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbZ}{\mathbb{Z}}
 \newcommand{\Z}{\mathbb{Z}}
 
 % mathfrak 
 \newcommand{\ff}{\mathfrak{f}}
+\newcommand{\frakk}{\mathfrak{k}}
 \renewcommand{\k}{\mathfrak{k}}
 \newcommand{\g}{\mathfrak{g}}
 \renewcommand{\tt}{{\mathfrak{t}}}
@@ -52,6 +58,7 @@
 
 % mathcal
 \newcommand{\U}{\mathcal{U}}
+\newcommand{\calV}{\mathcal{V}}
 \newcommand{\OO}{{\mathcal{O}}}
 \newcommand{\M}{\mathcal{M}}
 \newcommand{\fl}{\mathcal{F}l}
@@ -59,6 +66,7 @@
 \newcommand{\W}{\mathcal{W}}
 
 % misc
+\newcommand{\from}{\leftarrow}
 \newcommand{\inv}[2][1]{{#2}^{-#1}}
 \newcommand{\st}{\,\big|\,}
 
